@@ -1,8 +1,15 @@
 
 import mqtt from 'mqtt';
+import fetch from 'isomorphic-fetch';
 
-const api = {
-  mqtt,
-};
+console.log('ip address is: ', window.ip_address);
 
-export default api;
+if (typeof(window.ip_address) !== typeof('')){
+  throw (new Error('ip address not defined'));
+}
+
+window.mqtt = mqtt;
+window.fetch = fetch;
+
+
+

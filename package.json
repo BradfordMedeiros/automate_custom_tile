@@ -12,6 +12,7 @@
   "author": "",
   "dependencies": {
     "babel-register": "^6.24.1",
+    "isomorphic-fetch": "^2.2.1",
     "mqtt": "^2.3.0"
   },
   "devDependencies": {
