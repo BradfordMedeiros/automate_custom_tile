@@ -1,6 +1,6 @@
 html{height:100%;}
 body {
-    background: linear-gradient(rgba(241, 229, 238, 0.69),rgba(255,255,255,.6));
+    background: white;
     height: 100vh;
     width: 100vw;
     padding: 0;
@@ -34,8 +34,8 @@ body {
 }
 
 .drop {
-  background:-webkit-gradient(linear,0% 0%,0% 100%, from(rgba(170, 198, 243, 0.7)), to(rgba(57, 59, 90, 0.7))  );
-  background: -moz-linear-gradient(top, rgba(13,52,58,1) 0%, rgba(255,255,255,.6) 100%);
+  background: blue;
+
 	width:1px;
 	height:75px;
 	position: absolute;
