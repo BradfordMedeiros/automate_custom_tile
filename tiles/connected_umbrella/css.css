@@ -1,0 +1,49 @@
+html{height:100%;}
+body {
+    background: white;
+    height: 100vh;
+    width: 100vw;
+    padding: 0;
+    margin: 0;
+    overflow:hidden;
+}
+
+.umbrella {
+	position: absolute;
+	bottom: 5%;
+	width: 100%;
+	display: block;
+	justify-content: center;
+}
+
+.umbrella_open {
+	position: absolute;
+	bottom: 5%;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+.umbrella_close {
+	display: none;
+	position: absolute;
+	bottom: 5%;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+.drop {
+  background: blue;
+
+	width:1px;
+	height:75px;
+	position: absolute;
+	bottom:200px;
+	-webkit-animation: fall 1s linear infinite;
+}
+
+/* animate the drops*/
+@-webkit-keyframes fall {
+	to {margin-top:1500px;}
+}
