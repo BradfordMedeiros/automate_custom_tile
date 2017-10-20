@@ -1,0 +1,39 @@
+
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<div id="main">
+    <div>
+    <div>
+    	<div>topic</div>
+    	<input id="input_topic" />
+    </div>
+    <div>
+	<div>value</div>
+    	<input id="input_message" />
+    </div> 
+    <div>
+    
+    <button id="publish_button">publish</button>
+</div>
+
+
+<script>
+
+  var client = mqtt.connect(ip_address);
+
+  document.getElementById('publish_button').addEventListener('click', function(){
+    var topic = document.getElementById('input_topic').value;
+    var message = document.getElementById('input_message').value;
+
+    client.publish(topic, message);
+
+
+  });
+</script>
+
+</html>
+
+
