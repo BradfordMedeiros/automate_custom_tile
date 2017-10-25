@@ -1,6 +1,6 @@
 
-import mqtt from 'mqtt';
-import fetch from 'isomorphic-fetch';
+const mqtt = require('mqtt');
+const fetch = require('isomorphic-fetch');
 
 console.log('ip address is: ', window.ip_address);
 

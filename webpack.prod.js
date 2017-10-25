@@ -1,27 +1,13 @@
 const path = require('path');
-const process = require('process');
 const webpack = require('webpack');
 
 module.exports = {
   devtool: 'eval',
-  entry: ["babel-polyfill", "./src/index.js"],
+  entry: ["./src/index.js"],
   output: {
     path: path.join(__dirname, 'build'),
     filename: 'common.js',
     publicPath: '/static/',
-  },
-  module: {
-    loaders: [
-      {
-        test: /\.js$/,
-        loader: 'babel',
-        exclude: /node_modules/,
-        query: {
-          presets: ['react', 'es2015', 'stage-0'],
-
-        }
-      },
-    ],
   },
   plugins: [
     new webpack.optimize.DedupePlugin(),
