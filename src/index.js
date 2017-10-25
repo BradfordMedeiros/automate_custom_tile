@@ -1,22 +1,9 @@
-
 const mqtt = require('mqtt');
 
 const fetch = require('isomorphic-fetch');
 if (window.fetch === undefined) {
   window.fetch = fetch;
 }
-
-
-console.log('ip address is: ', window.ip_address);
-
-/*
- injected into script should be
- automate: {
-   ip_address: <ip address only>,
-   mqtt_url: <ip address + protocol>,
- }
-
- */
 
 if (typeof(automate) !== typeof({})){
   throw (new Error('automate object not defined'));
@@ -33,6 +20,7 @@ if (!automate || typeof(automate.mqtt_url) !== typeof('')){
 automate.mqtt = mqtt;
 
 var automate_env_url = 'http://' + automate.ip_address + ':9000/env/';
+
 automate.getEnv = function(env) {
   if  (typeof(env) !== typeof('')){
     throw (new Error('env must be defined as string'));
