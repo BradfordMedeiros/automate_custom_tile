@@ -31,10 +31,19 @@ if (!automate || typeof(automate.mqtt_url) !== typeof('')){
 }
 
 automate.mqtt = mqtt;
+
+var automate_env_url = 'http://' + automate.ip_address + ':9000/env/';
 automate.getEnv = function(env) {
   if  (typeof(env) !== typeof('')){
     throw (new Error('env must be defined as string'));
   }
+
+  return new Promise(function(resolve, reject) {
+    var url = automate_env_url + env;
+    fetch(url).then(function(response){
+      response.text().then(resolve).catch(reject);
+    }).catch(reject);
+  });
 };
 
 automate.setEnv = function (env, value) {
@@ -44,5 +53,14 @@ automate.setEnv = function (env, value) {
   if (typeof('value') !== typeof('')){
     throw (new Error('value must be defined as string'));
   }
+
+  return new Promise(function(resolve, reject) {
+    var url = automate_env_url + env + '/' + value;
+    fetch(url, {
+      method: 'POST',
+    }).then(function(response){
+      response.text().then(resolve).catch(reject);
+    }).catch(reject);
+  });
 };
 
