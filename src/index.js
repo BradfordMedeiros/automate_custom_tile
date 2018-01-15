@@ -52,3 +52,35 @@ automate.setEnv = function (env, value) {
   });
 };
 
+(function() {
+  var initialData = null;
+  try {
+    initialData = JSON.parse(decodeURI(new URL(window.location.href).search.substring(1)))
+  }catch(err){
+    console.error('could not  get saved tile data');
+  }
+
+  var uuid = initialData.uuid;
+  automate.savedTileData = initialData.savedContent;
+
+  automate.saveTileData = function(value) {
+    console.log('placeholder ot save content');
+    var message = { value: value, uuid: uuid };
+    window.parent.postMessage(message, "*");
+  };
+
+})();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
